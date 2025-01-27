@@ -29,3 +29,6 @@ jobs:
 
       - name: Check code formatting
         run: test -z $(go fmt ./...)
+      
+      - name: Exit after format
+        run: (exit echo $?)
