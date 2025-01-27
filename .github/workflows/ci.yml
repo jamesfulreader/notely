@@ -16,8 +16,16 @@ jobs:
       - name: Run tests
         run: go test -cover ./...
 
-      - name: Format code
-        run: test -z $(go fmt ./...)
-
       - name: Exit Successfully
         run: (exit 0)
+
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Check code formatting
+        run: test -z $(go fmt ./...)
