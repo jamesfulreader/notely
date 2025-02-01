@@ -14,5 +14,5 @@ jobs:
           uses: actions/setup-go@v5
 
         - name: build
-          run: ../../scripts/build.sh
+          run: ./scripts/build.sh
 
